@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Мой первый сайт</title>
+    <style>
+        /* Это CSS-стили. Мы меняем внешний вид сайта */
+        
+        body {
+            background-color: #1a1a1a; /* Темный современный фон */
+            color: #ffffff;            /* Белый цвет текста */
+            font-family: 'Segoe UI', sans-serif; /* Красивый шрифт без засечек */
+            text-align: center;        /* Выравниваем всё по центру */
+            padding-top: 100px;        /* Отступ сверху, чтобы текст не прилипал */
+        }
+
+        h1 {
+            color: #00ffcc;            /* Яркий бирюзовый цвет для заголовка */
+            font-size: 36px;           /* Размер шрифта */
+            margin-bottom: 200px;      /* Отступ под заголовком */
+        }
+
+        p {
+            color: #aaaaaa;            /* Серый цвет для обычного текста */
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #FF45005; /* Розово-красная кнопка */
+            color: white;              /* Белый текст на кнопке */
+            border: none;              /* Убираем стандартную рамку */
+            padding: 15px 30px;        /* Внутренние отступы (сделай кнопку больше) */
+            font-size: 16px;
+            font-weight: bold;         /* Жирный текст */
+            border-radius: 25px;       /* Закругляем углы кнопки */
+            cursor: pointer;           /* Меняем курсор при наведении на палец */
+            transition: 0.3s;          /* Плавность анимации */
+        }
+
+        /* Эффект при наведении мышки на кнопку */
+        button:hover {
+            background-color: #00ffcc; /* Кнопка станет бирюзовой */
+            color: #1a1a1a;            /* Текст станет темным */
+            box-shadow: 0 0 15px #00ffcc; /* Добавляем неоновое свечение */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Я Руслан, и это мой первый сайт!</h1>
+    <p>Мой первый шаг к бабосикам</p>
+    
+    <button>Нажми на меня</button>
+
+</body> <script>
+        // Это JavaScript. Он отвечает за действие!
+        const myButton = document.querySelector('button');
+
+        myButton.addEventListener('click', function() {
+            alert('Поздравляю! Твой первый скрипт сработал. Ты на шаг ближе к заработку на сайтах! 🚀');
+        });
+    </script>
+</html>
