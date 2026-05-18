@@ -1,63 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой первый сайт</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Мое Портфолио</title>
     <style>
-        /* Это CSS-стили. Мы меняем внешний вид сайта */
-        
         body {
-            background-color: #1a1a1a; /* Темный современный фон */
-            color: #ffffff;            /* Белый цвет текста */
-            font-family: 'Segoe UI', sans-serif; /* Красивый шрифт без засечек */
-            text-align: center;        /* Выравниваем всё по центру */
-            padding-top: 100px;        /* Отступ сверху, чтобы текст не прилипал */
+            background-color: #121214;
+            color: #e1e1e6;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Контейнер для шапки сайта */
+        .profile-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Стили для твоей картинки */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Делает картинку круглой */
+            border: 3px solid #00ffcc;
+            object-fit: cover; /* Чтобы картинка не сплющивалась */
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
         }
 
         h1 {
-            color: #00ffcc;            /* Яркий бирюзовый цвет для заголовка */
-            font-size: 36px;           /* Размер шрифта */
-            margin-bottom: 200px;      /* Отступ под заголовком */
+            color: #00ffcc;
+            margin-top: 15px;
+            font-size: 32px;
         }
 
-        p {
-            color: #aaaaaa;            /* Серый цвет для обычного текста */
-            font-size: 18px;
+        /* Сетка для будущих проектов */
+        .projects-grid {
+            display: flex;
+            gap: 20px; /* Отступы между карточками */
+            max-width: 900px;
+            width: 900px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        /* Карточка проекта */
+        .card {
+            background-color: #202024;
+            border: 1px solid #29292e;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1; /* Растягивает карточки поровну */
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Карточка плавно приподнимается */
+            border-color: #ff0055;
+        }
+
+        .card h3 {
+            color: #ff0055;
+            margin-top: 0;
         }
 
         button {
-            background-color: #FF45005; /* Розово-красная кнопка */
-            color: white;              /* Белый текст на кнопке */
-            border: none;              /* Убираем стандартную рамку */
-            padding: 15px 30px;        /* Внутренние отступы (сделай кнопку больше) */
+            background-color: #ff0055;
+            color: white;
+            border: none;
+            padding: 12px 24px;
             font-size: 16px;
-            font-weight: bold;         /* Жирный текст */
-            border-radius: 25px;       /* Закругляем углы кнопки */
-            cursor: pointer;           /* Меняем курсор при наведении на палец */
-            transition: 0.3s;          /* Плавность анимации */
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            margin-bottom: 50px;
         }
 
-        /* Эффект при наведении мышки на кнопку */
         button:hover {
-            background-color: #00ffcc; /* Кнопка станет бирюзовой */
-            color: #1a1a1a;            /* Текст станет темным */
-            box-shadow: 0 0 15px #00ffcc; /* Добавляем неоновое свечение */
+            background-color: #00ffcc;
+            color: #121214;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        /* АДАПТИВНОСТЬ: Если экран меньше 768px (например, телефон) */
+        @media (max-width: 768px) {
+            .projects-grid {
+                flex-direction: column; /* Карточки встанут друг под друга */
+                width: 100%;
+                padding: 10px;
+            }
+            .card {
+                margin: 0 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Я Руслан, и это мой первый сайт!</h1>
-    <p>Мой первый шаг к бабосикам</p>
-    
-    <button>Нажми на меня</button>
+    <div class="profile-container">
+        <img src="photo.jpg" alt="Мое фото" class="profile-img">
+        <h1>Будущий Web-Dev Проект</h1>
+        <p>Изучаю HTML, CSS и JavaScript. Создаю адаптивные сайты под любые экраны.</p>
+    </div>
 
-</body> <script>
-        // Это JavaScript. Он отвечает за действие!
-        const myButton = document.querySelector('button');
+    <div class="projects-grid">
+        <div class="card">
+            <h3>Проект 1</h3>
+            <p>Сайт-визитка для локального бизнеса. Полная адаптивность под смартфоны.</p>
+        </div>
+        <div class="card">
+            <h3>Проект 2</h3>
+            <p>Лендинг для доставки еды или интернет-магазина на чистом коде.</p>
+        </div>
+    </div>
 
-        myButton.addEventListener('click', function() {
-            alert('Поздравляю! Твой первый скрипт сработал. Ты на шаг ближе к заработку на сайтах! 🚀');
+    <button id="action-btn">Связаться со мной</button>
+
+    <script>
+        document.getElementById('action-btn').addEventListener('click', function() {
+            alert('5.5м турков))');
         });
     </script>
+
+</body>
 </html>
