@@ -3,57 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
+    <title>Услуги и Контакты</title>
     <style>
         body {
             background-color: #121214;
             color: #e1e1e6;
             font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            padding-top: 80px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
         }
 
         h1 {
             color: #ff0055;
-            font-size: 36px;
+            font-size: 32px;
+            margin-top: 40px;
+            text-align: center;
         }
 
-        .contact-links {
-            margin: 40px auto;
+        p {
+            color: #aaaaaa;
+            text-align: center;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        /* Стильная таблица цен */
+        .price-table {
+            width: 90%;
+            max-width: 600px;
+            border-collapse: collapse; /* Убирает двойные рамки */
+            margin: 30px 0;
+            background-color: #202024;
+            border-radius: 8px;
+            overflow: hidden; /* Чтобы углы таблицы плавно скруглялись */
+            border: 1px solid #29292e;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #29292e;
+            color: #00ffcc;
+            font-weight: bold;
+        }
+
+        td {
+            border-bottom: 1px solid #29292e;
+        }
+
+        /* Выделяем цену ярким цветом */
+        .price {
+            color: #00ffcc;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .contact-section {
+            width: 90%;
             max-width: 400px;
             display: flex;
             flex-direction: column;
             gap: 15px;
+            margin-top: 20px;
         }
 
-        /* Стили для ссылок-кнопок */
-        .social-link {
-            display: block;
-            background-color: #202024;
-            border: 1px solid #29292e;
-            color: #00ffcc;
-            text-decoration: none; /* Убираем подчеркивание у ссылки */
+        /* Живые кнопки для связи */
+        .btn-connect {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
             padding: 15px;
             border-radius: 8px;
             font-weight: bold;
+            color: white;
             transition: 0.3s;
         }
 
-        .social-link:hover {
-            background-color: #00ffcc;
-            color: #121214;
-            box-shadow: 0 0 15px #00ffcc;
-            transform: scale(1.03); /* Кнопка чуть-чуть увеличивается */
+        .btn-tg {
+            background-color: #0088cc; /* Фирменный цвет Телеграма */
+        }
+        .btn-tg:hover {
+            box-shadow: 0 0 15px rgba(0, 136, 204, 0.5);
+            transform: scale(1.02);
         }
 
-        /* Ссылка для возврата назад */
+        .btn-wa {
+            background-color: #25d366; /* Фирменный цвет Ватсапа */
+        }
+        .btn-wa:hover {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+            transform: scale(1.02);
+        }
+
         .back-link {
             color: #aaaaaa;
             text-decoration: underline;
-            display: inline-block;
-            margin-top: 30px;
+            margin-top: 40px;
         }
-        
         .back-link:hover {
             color: #ffffff;
         }
@@ -61,16 +116,47 @@
 </head>
 <body>
 
-    <h1>Связаться со мной</h1>
-    <p>Вы можете найти меня в социальных сетях или написать напрямую:</p>
+    <h1>Услуги и Прайс-лист</h1>
+    <p>Выберите нужную услугу и напишите мне в мессенджеры. Отвечаю в течение 15 минут!</p>
 
-    <div class="contact-links">
-        <a href="#" target="_blank" class="social-link">Telegram</a>
-        <a href="#" target="_blank" class="social-link">Instagram</a>
-        <a href="#" target="_blank" class="social-link">Discord</a>
+    <table class="price-table">
+        <thead>
+            <tr>
+                <th>Услуга</th>
+                <th style="text-align: right;">Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Чистка ПК и замена термопасты</td>
+                <td class="price">5 000 ₸</td>
+            </tr>
+            <tr>
+                <td>Установка и настройка Windows</td>
+                <td class="price">7 000 ₸</td>
+            </tr>
+            <tr>
+                <td>Удаление вирусов и ускорение системы</td>
+                <td class="price">4 000 ₸</td>
+            </tr>
+            <tr>
+                <td>Сборка компьютера под ключ</td>
+                <td class="price">10 000 ₸</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="contact-section">
+        <a href="https://t.me/Lollip0pka" target="_blank" class="btn-connect btn-tg">
+            Написать в Telegram
+        </a>
+        
+        <a href="https://wa.me/77001112233?text=Привет!%20Нужен%20ремонт%20ПК" target="_blank" class="btn-connect btn-wa">
+            Написать в WhatsApp
+        </a>
     </div>
 
-    <a href="index.html" class="back-link">← Вернуться на главную</a>
+    <a href="index.html" class="back-link">← На главную страницу</a>
 
 </body>
 </html>
