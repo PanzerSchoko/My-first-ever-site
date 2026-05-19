@@ -2,127 +2,82 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Мое Портфолио</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое Профессиональное Портфолио</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
+        /* Оставляем совсем чуть-чуть своего CSS для кастомизации фона */
         body {
             background-color: #121214;
             color: #e1e1e6;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-
-        /* Контейнер для шапки сайта */
-        .profile-container {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        /* Стили для твоей картинки */
         .profile-img {
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Делает картинку круглой */
-            border: 3px solid #00ffcc;
-            object-fit: cover; /* Чтобы картинка не сплющивалась */
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-        }
-
-        h1 {
-            color: #00ffcc;
-            margin-top: 15px;
-            font-size: 32px;
-        }
-
-        /* Сетка для будущих проектов */
-        .projects-grid {
-            display: flex;
-            gap: 20px; /* Отступы между карточками */
-            max-width: 900px;
-            width: 900px;
-            padding: 20px;
-            justify-content: center;
-        }
-
-        /* Карточка проекта */
-        .card {
-            background-color: #202024;
-            border: 1px solid #29292e;
-            border-radius: 8px;
-            padding: 20px;
-            flex: 1; /* Растягивает карточки поровну */
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px); /* Карточка плавно приподнимается */
-            border-color: #ff0055;
-        }
-
-        .card h3 {
-            color: #ff0055;
-            margin-top: 0;
-        }
-
-        button {
-            background-color: #ff0055;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 20px;
-            margin-bottom: 50px;
-        }
-
-        button:hover {
-            background-color: #00ffcc;
-            color: #121214;
-            box-shadow: 0 0 15px #00ffcc;
-        }
-
-        /* АДАПТИВНОСТЬ: Если экран меньше 768px (например, телефон) */
-        @media (max-width: 768px) {
-            .projects-grid {
-                flex-direction: column; /* Карточки встанут друг под друга */
-                width: 100%;
-                padding: 10px;
-            }
-            .card {
-                margin: 0 20px;
-            }
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0d6efd; /* Цвет кнопок Bootstrap */
         }
     </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <img src="photo.jpg" alt="Мое фото" class="profile-img">
-        <h1>Будущий Web-Dev Проект</h1>
-        <p>Изучаю HTML, CSS и JavaScript. Создаю адаптивные сайты под любые экраны.</p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand text-primary fw-bold" href="#">WebDev Профи</a>
+            <button class="navbar-collapse-toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Услуги и Цены</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center my-5 py-4">
+        <img src="photo.jpg" alt="Мое фото" class="profile-img shadow-lg mb-3">
+        <h1 class="display-4 fw-bold text-white">Добро пожаловать!</h1>
+        <p class="lead text-white-50 mx-auto" style="max-width: 600px;">
+            Я создаю современные, быстрые и адаптивные сайты для бизнеса на чистом коде с использованием Bootstrap 5.
+        </p>
     </div>
 
-    <div class="projects-grid">
-        <div class="card">
-            <h3>Проект 1</h3>
-            <p>Сайт-визитка для локального бизнеса. Полная адаптивность под смартфоны.</p>
-        </div>
-        <div class="card">
-            <h3>Проект 2</h3>
-            <p>Лендинг для доставки еды или интернет-магазина на чистом коде.</p>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Что я умею делать:</h2>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="card bg-dark text-white border-secondary h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Адаптивная верстка</h5>
+                        <p class="card-text text-secondary">Сайт будет идеально отображаться на смартфонах, планшетах и огромных мониторах благодаря сетке Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-5">
+                <div class="card bg-dark text-white border-secondary h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Интеграция мессенджеров</h5>
+                        <p class="card-text text-secondary">Подключение живых кнопок для связи в один клик. Клиенты смогут писать вам напрямую в Telegram или WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-<a href="contacts.html">
-    <button id="action-btn">Связаться со мной</button>
-</a>
 
+    <div class="text-center my-5">
+        <a href="contacts.html" class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-pill shadow">
+            Посмотреть прайс-лист
+        </a>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
